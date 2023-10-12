@@ -16,6 +16,20 @@
 
 What are some questions you would ask to gather requirements?
 ```
+floors
+Entry exit
+Mutiple vehicles
+    -small,medium,large
+display board
+    -gate,floor
+payment
+    -card,cash,upi
+rent amount
+    -base price
+        small-50,medium-80,large-100
+    -hourly price
+        small-20,medium-40,large-60
+
 ```
 
 ## Requirements
@@ -41,34 +55,34 @@ What would be the use cases i.e. the interactions between the actors and the sys
 
 #### Actor 1
 
-Name of the actor - ` `
+Name of the actor - ` Admin `
 
 Use cases:
 ```
-1. 
-2. 
-3. 
+1. Change fare rates
+2. Add parking floor
+3. Remove parking floor
 4. 
 ```
 #### Actor 2
 
-Name of the actor - ` `
+Name of the actor - `Driver `
 Use cases:
 ```
-1. 
-2. 
+1. Make Payment
+2. Collect Ticket
 3. 
 4. 
 ```
 
 #### Actor 3
 
-Name of the actor - ` `
+Name of the actor - `Gate Operator `
 Use cases:
 ```
-1. 
-2. 
-3. 
+1. Query Available Slots
+2. Generate Ticket
+3. Issue Bill
 4. 
 ```
 Add more actors and their use cases as needed.
@@ -91,9 +105,11 @@ You could also use a tool like [Swagger](https://swagger.io/) to design the APIs
 
 ### APIs for Actor 1
 
+
 #### APIs Category 1
 ```markdown
 * `API name` - `HTTP method` - `URL` - `?Request body` - `?Response body`
+Change Fare   PUT/
 ```
 
 ### APIs for Actor 2
@@ -101,6 +117,8 @@ You could also use a tool like [Swagger](https://swagger.io/) to design the APIs
 #### APIs Category 1
 ```markdown
 * `API name` - `HTTP method` - `URL` - `?Request body` - `?Response body`
+1. Make Payment  - POST/parkingLot/payment/payment_id
+2. Collect Ticket - GET/parkingLot/ticket/ticket_id
 ```
 
 ### APIs for Actor 3
@@ -108,6 +126,7 @@ You could also use a tool like [Swagger](https://swagger.io/) to design the APIs
 #### APIs Category 1
 ```markdown
 * `API name` - `HTTP method` - `URL` - `?Request body` - `?Response body`
+1. Query Available Slots  - GET/parkingLot/slots?available=true
 ```
 
 ## Class diagram
